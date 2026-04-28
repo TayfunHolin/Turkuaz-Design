@@ -23,6 +23,7 @@ const nav = [
       { label: "Checkbox",  href: "/components/checkbox" },
       { label: "Chip",       href: "/components/chip" },
       { label: "Data Table", href: "/components/data-table" },
+      { label: "Footer",     href: "/components/footer" },
       { label: "Header",     href: "/components/header" },
       { label: "Input",      href: "/components/input" },
       { label: "Progress",  href: "/components/progress" },

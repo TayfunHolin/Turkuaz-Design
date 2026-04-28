@@ -1,0 +1,142 @@
+/* Footer — Figma: dark navy bg, 4-col nav, legal section */
+
+.footer {
+  background: #0C1033;
+  width: 100%;
+}
+
+.inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 48px 40px 36px;
+}
+
+/* ── Top row: brand + columns ── */
+.top {
+  display: grid;
+  grid-template-columns: 220px repeat(4, 1fr);
+  gap: 32px;
+  align-items: start;
+}
+
+/* ── Brand ── */
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.copyright {
+  font-size: 0.6875rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.35);
+  margin: 0;
+}
+
+/* ── Nav columns ── */
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.colTitle {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 4px;
+  letter-spacing: 0.01em;
+}
+
+.linkList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.link {
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.55);
+  text-decoration: none;
+  line-height: 1.4;
+  transition: color 120ms;
+  cursor: pointer;
+}
+
+a.link:hover {
+  color: #ffffff;
+}
+
+/* ── Legal ── */
+.legal {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.legalDivider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin-bottom: 8px;
+}
+
+.legalItem {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.legalTitle {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.50);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.legalText {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.30);
+  line-height: 1.7;
+  margin: 0;
+  max-width: 960px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .top {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .brand {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .inner {
+    padding: 36px 20px 28px;
+  }
+
+  .top {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .brand {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
