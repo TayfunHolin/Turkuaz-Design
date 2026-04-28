@@ -8,51 +8,81 @@ export default function CardPage() {
       <PageHeader
         category="Shared Components → Card"
         title="Card"
-        description="İçerik gruplamak için kullanılan temel konteyner bileşeni. Haber, veri, duyuru ve stat kartları için esnek slot yapısı."
+        description="Figma'dan 3 kart tipi: Main Card (hero görsel), Text Card (haber listesi) ve Standard Card (görsel + başlık)."
       />
 
       <CardExamples />
 
-      <Section title="Anatomy">
+      <Section title="Anatomy — Main Card">
         <AnatomyList parts={[
-          { name: "Container", description: "border-radius=16px, bg=#fff. default=1px #E9E9E9 kenarlık, outlined=1.5px #292F89, elevated=box-shadow." },
-          { name: "Image area (opsiyonel)", description: "Kartın üst kısmında tam genişlik görsel alan. imageHeight prop ile yükseklik ayarlanır, object-fit:cover ile kırpılır." },
-          { name: "Badge row (opsiyonel)", description: "Başlığın üzerinde kategori veya durum rozeti alanı. Badge bileşeni ile birlikte kullanılır." },
-          { name: "Header — title + subtitle", description: "title: 1rem/700 koyu metin. subtitle: 0.8125rem/400 soluk metin. Her ikisi de opsiyoneldir." },
-          { name: "Description", description: "1.6 satır yüksekliğinde 0.875rem gri açıklama paragrafı." },
-          { name: "Actions (opsiyonel)", description: "Button veya Link gibi etkileşimli elementlerin yerleştiği alan. description'ın altında, footer'ın üstünde." },
-          { name: "Footer (opsiyonel)", description: "Tarih, yazar avatarı, görüntülenme sayısı gibi metadata. Üstte 1px #E9E9E9 separator ile ayrılır." },
+          { name: "Background image",  description: "position:absolute, object-fit:cover ile kartı tamamen kaplar. min-height=320px." },
+          { name: "Gradient overlay",  description: "linear-gradient(to top): alt %0→rgba(0,0,0,0.78), üst→şeffaf. Metin okunabilirliğini sağlar." },
+          { name: "Title",             description: "Overlay üzerinde beyaz, 1.25rem/700 başlık metni." },
+          { name: "Description",       description: "Başlığın altında rgba(255,255,255,0.80) renkte max 3 satır kırpılmış açıklama." },
+          { name: "Carousel dots",     description: "dots prop ile etkinleşir. Aktif dot genişler (6px → 18px pill). onDotClick handler." },
+        ]} />
+      </Section>
+
+      <Section title="Anatomy — Text Card">
+        <AnatomyList parts={[
+          { name: "Dashed border",   description: "1.5px dashed #292F89 — primary renkte kesik çizgi kenarlık." },
+          { name: "Label",           description: "Üstte küçük harf etiket. Kategori veya 'Son Dakika' gibi bölüm başlığı." },
+          { name: "Time",            description: "Her satırda saat/tarih bilgisi. 0.75rem, neutral-400." },
+          { name: "Title",           description: "Haber başlığı. 0.9375rem/700. Hover'da #292F89 renk geçişi." },
+          { name: "Separator",       description: "Satırlar arası 1px solid #E9E9E9 alt kenarlık." },
+        ]} />
+      </Section>
+
+      <Section title="Anatomy — Standard Card">
+        <AnatomyList parts={[
+          { name: "Image area",  description: "Kartın üst kısmında object-fit:cover görsel. imageHeight prop ile yükseklik ayarlanır (default 160px)." },
+          { name: "Title",       description: "0.9375rem/700, neutral-900. Görselin hemen altında." },
+          { name: "Subtext",     description: "0.8125rem, neutral-400. Kategori, yazar veya tarih gibi ikincil bilgi." },
         ]} />
       </Section>
 
       <Section title="Kullanım Kılavuzu">
         <DosDonts items={[
-          { type: "do",   title: "İçerik hiyerarşisini net kur", description: "Badge → Title → Description → Footer sıralaması kullanıcının göz akışını yönlendirir. Her katta yalnızca gerekli olanı göster." },
-          { type: "do",   title: "Grid içinde eşit yükseklikte tut", description: "flex: 1 veya grid ile kartları aynı satırda hizala. Farklı içerik uzunluklarında görsel düzensizlik olur." },
-          { type: "do",   title: "Stat kartları için compact padding kullan", description: "Sayısal veri kartlarında pad_sm veya pad_md tercih et; lg gereksiz boşluk yaratır." },
-          { type: "dont", title: "Tek kart için elevated kullanma", description: "Elevated varyant ancak diğer elemanların önünde/üzerinde duran kartlarda anlam kazanır. Düz listede kullanma." },
-          { type: "dont", title: "Karta çok fazla aksiyon koyma", description: "Bir kartta max 2 action button olmalı. Fazlası kartı form'a dönüştürür." },
-          { type: "dont", title: "Tıklanabilir kartı link gibi kullanma", description: "Href gerektiren navigasyon için href prop'unu kullan; clickable + onClick sadece in-page etkileşimler içindir." },
+          { type: "do",   title: "Main Card'ı manşet haber için kullan",       description: "Sayfanın en önemli içeriğini ön plana çıkarmak için idealdir. Carousel dots ile birden fazla öne çıkan içerik sunulabilir." },
+          { type: "do",   title: "Text Card'ı son dakika/hızlı liste için kullan", description: "Görsel olmayan, hızlı tüketilen haber listelerinde sade ve kompakt sunum sağlar." },
+          { type: "do",   title: "Standard Card'ı grid listelerde kullan",     description: "Kategori sayfaları, öneri alanları ve ilgili haberler bölümünde grid layout ile kullan." },
+          { type: "dont", title: "Main Card'ı düşük kaliteli görselle kullanma", description: "Görsel kartı tamamen kapladığı için en az 800×500px, yüksek kontrastlı fotoğraf kullan." },
+          { type: "dont", title: "Text Card'a çok uzun başlıklar ekleme",     description: "Liste kompaktlığını bozmamak için başlık max 2 satıra sığmalı." },
+          { type: "dont", title: "Üç tipi aynı anda aynı hiyerarşide kullanma", description: "Her kart tipinin farklı öncelik seviyesi var. Main=birincil, Text=ikincil, Standard=üçüncül hiyerarşiyi koru." },
         ]} />
       </Section>
 
-      <Section title="Props">
+      <Section title="MainCard Props">
         <PropsTable rows={[
-          { prop: "variant",     type: '"default" | "outlined" | "elevated"', default: '"default"', description: "Görsel stil — kenarlık veya gölge" },
-          { prop: "padding",     type: '"sm" | "md" | "lg" | "none"',         default: '"md"',      description: "İç boşluk — sm=16px, md=20px, lg=28px" },
-          { prop: "clickable",   type: "boolean",    default: "false",  description: "Hover efekti ve pointer cursor ekler" },
-          { prop: "href",        type: "string",     default: "—",      description: "Kartı <a> etiketine çevirir, tüm alan tıklanabilir olur" },
-          { prop: "image",       type: "string",     default: "—",      description: "Üst görsel URL'i" },
-          { prop: "imageAlt",    type: "string",     default: '""',     description: "Görsel alt metni" },
-          { prop: "imageHeight", type: "number",     default: "180",    description: "Görsel alanı yüksekliği (px)" },
-          { prop: "badge",       type: "ReactNode",  default: "—",      description: "Başlık üstü rozet alanı" },
-          { prop: "title",       type: "ReactNode",  default: "—",      description: "Kart başlığı" },
-          { prop: "subtitle",    type: "ReactNode",  default: "—",      description: "Başlık altı ikincil metin" },
-          { prop: "description", type: "ReactNode",  default: "—",      description: "Açıklama paragrafı" },
-          { prop: "actions",     type: "ReactNode",  default: "—",      description: "Buton/aksiyon alanı" },
-          { prop: "footer",      type: "ReactNode",  default: "—",      description: "Separator'lı alt metadata alanı" },
-          { prop: "children",    type: "ReactNode",  default: "—",      description: "Özel içerik slot'u" },
-          { prop: "onClick",     type: "() => void", default: "—",      description: "Tıklama handler" },
+          { prop: "type",        type: '"main"',    default: "—",     description: "Kart tipi belirleyici" },
+          { prop: "image",       type: "string",    default: "—",     description: "Arka plan görsel URL'i (zorunlu)" },
+          { prop: "imageAlt",    type: "string",    default: '""',    description: "Erişilebilirlik için alt metni" },
+          { prop: "title",       type: "string",    default: "—",     description: "Beyaz büyük başlık (zorunlu)" },
+          { prop: "description", type: "string",    default: "—",     description: "Opsiyonel açıklama (max 3 satır)" },
+          { prop: "dots",        type: "number",    default: "0",     description: "Carousel nokta sayısı (≥2 ise gösterilir)" },
+          { prop: "activeDot",   type: "number",    default: "0",     description: "Aktif nokta indeksi" },
+          { prop: "onDotClick",  type: "(i) => void", default: "—",  description: "Nokta tıklama handler" },
+        ]} />
+      </Section>
+
+      <Section title="TextCard Props">
+        <PropsTable rows={[
+          { prop: "type",  type: '"text"',           default: "—",  description: "Kart tipi belirleyici" },
+          { prop: "label", type: "string",           default: "—",  description: "Üst etiket/kategori" },
+          { prop: "items", type: "TextCardItem[]",   default: "—",  description: "Haber satırları — {time, title, href?}" },
+        ]} />
+      </Section>
+
+      <Section title="StandardCard Props">
+        <PropsTable rows={[
+          { prop: "type",        type: '"standard"', default: '"standard"', description: "Kart tipi belirleyici" },
+          { prop: "image",       type: "string",     default: "—",   description: "Üst görsel URL" },
+          { prop: "imageAlt",    type: "string",     default: '""',  description: "Görsel alt metni" },
+          { prop: "imageHeight", type: "number",     default: "160", description: "Görsel yüksekliği (px)" },
+          { prop: "title",       type: "string",     default: "—",   description: "Kart başlığı (zorunlu)" },
+          { prop: "subtext",     type: "string",     default: "—",   description: "İkincil metin — kategori, yazar" },
+          { prop: "href",        type: "string",     default: "—",   description: "Link URL — kartı <a> yapar" },
+          { prop: "onClick",     type: "() => void", default: "—",   description: "Tıklama handler" },
         ]} />
       </Section>
     </>

@@ -1,134 +1,212 @@
-/* Card — Figma spec: radius=16px, bg=#fff, border=1px #E9E9E9 */
-
-.card {
-  background: #ffffff;
+/* ══════════════════════════════════════
+   Main Card — tam kaplayan görsel + overlay
+   ══════════════════════════════════════ */
+.mainCard {
+  position: relative;
   border-radius: 16px;
   overflow: hidden;
+  width: 100%;
+  min-height: 320px;
   display: flex;
   flex-direction: column;
-  position: relative;
-  text-decoration: none;
-  color: inherit;
+  justify-content: flex-end;
 }
 
-/* ── Variants ── */
-.default {
-  border: 1px solid #E9E9E9;
-}
-
-.outlined {
-  border: 1.5px solid #292F89;
-}
-
-.elevated {
-  border: 1px solid transparent;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.06);
-}
-
-/* ── Interactive ── */
-.interactive {
-  cursor: pointer;
-  transition: box-shadow 150ms ease, transform 150ms ease, border-color 150ms ease;
-}
-
-.default.interactive:hover,
-.elevated.interactive:hover {
-  box-shadow: 0 4px 16px rgba(41,47,137,0.10), 0 12px 32px rgba(41,47,137,0.08);
-  transform: translateY(-2px);
-  border-color: #D2D7F5;
-}
-
-.outlined.interactive:hover {
-  box-shadow: 0 4px 16px rgba(41,47,137,0.12);
-  transform: translateY(-2px);
-}
-
-.interactive:focus-visible {
-  outline: 2px solid #292F89;
-  outline-offset: 2px;
-}
-
-/* ── Padding ── */
-.pad_sm { padding: 16px; }
-.pad_md { padding: 20px; }
-.pad_lg { padding: 28px; }
-
-/* Image padding compensation when card has padding */
-.pad_sm .imageWrap,
-.pad_md .imageWrap,
-.pad_lg .imageWrap {
-  margin: -20px -20px 16px;
-}
-.pad_sm .imageWrap { margin: -16px -16px 14px; }
-.pad_lg .imageWrap { margin: -28px -28px 20px; }
-
-/* ── Image ── */
-.imageWrap {
-  width: 100%;
-  overflow: hidden;
-  flex-shrink: 0;
-}
-
-.image {
+.mainImage {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-/* ── Body (for none padding) ── */
-.body {
+.mainOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.78) 0%,
+    rgba(0, 0, 0, 0.30) 50%,
+    rgba(0, 0, 0, 0.00) 100%
+  );
+}
+
+.mainContent {
+  position: relative;
+  padding: 24px;
+  z-index: 1;
+}
+
+.mainTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.35;
+  margin: 0 0 8px;
+  letter-spacing: -0.01em;
+}
+
+.mainDesc {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.80);
+  line-height: 1.6;
+  margin: 0 0 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.dots {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.40);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background 150ms, width 150ms;
+}
+
+.dotActive {
+  width: 18px;
+  border-radius: 3px;
+  background: #ffffff;
+}
+
+
+/* ══════════════════════════════════════
+   Text Card — kesik çizgi + liste
+   ══════════════════════════════════════ */
+.textCard {
+  border: 1.5px dashed #292F89;
+  border-radius: 16px;
   padding: 20px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
-/* ── Badge row ── */
-.badgeRow {
-  margin-bottom: 10px;
+.textLabel {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #292F89;
+  margin: 0 0 14px;
 }
 
-/* ── Header ── */
-.header {
-  margin-bottom: 8px;
+.textList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
 }
 
-.title {
-  font-size: 1rem;
+.textItem {
+  padding: 12px 0;
+  border-bottom: 1px solid #E9E9E9;
+}
+
+.textItem:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.textItem:first-child {
+  padding-top: 0;
+}
+
+.textItemLink {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.textItemLink:hover .textTitle {
+  color: #292F89;
+}
+
+.textTime {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--color-neutral-400);
+  font-weight: 500;
+}
+
+.textTitle {
+  display: block;
+  font-size: 0.9375rem;
   font-weight: 700;
   color: var(--color-neutral-900);
   line-height: 1.35;
+  transition: color 120ms;
 }
 
-.subtitle {
-  font-size: 0.8125rem;
-  color: var(--color-neutral-500);
-  margin-top: 2px;
-  line-height: 1.4;
-}
 
-/* ── Description ── */
-.description {
-  font-size: 0.875rem;
-  color: var(--color-neutral-600);
-  line-height: 1.6;
-  margin: 0;
-}
-
-/* ── Actions ── */
-.actions {
+/* ══════════════════════════════════════
+   Standard Card — görsel + title + subtext
+   ══════════════════════════════════════ */
+.stdCard {
+  background: #ffffff;
+  border: 1px solid #E9E9E9;
+  border-radius: 16px;
+  overflow: hidden;
   display: flex;
-  gap: 8px;
-  align-items: center;
-  margin-top: 16px;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
 }
 
-/* ── Footer ── */
-.footer {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 16px;
-  padding-top: 16px;
-  border-top: 1px solid #E9E9E9;
+.stdInteractive {
+  cursor: pointer;
+  transition: box-shadow 150ms ease, transform 150ms ease, border-color 150ms ease;
+}
+
+.stdInteractive:hover {
+  box-shadow: 0 4px 16px rgba(41, 47, 137, 0.10);
+  transform: translateY(-2px);
+  border-color: #D2D7F5;
+}
+
+.stdImageWrap {
+  width: 100%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.stdImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.stdBody {
+  padding: 14px 16px 16px;
+}
+
+.stdTitle {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--color-neutral-900);
+  line-height: 1.35;
+  margin: 0 0 4px;
+}
+
+.stdSubtext {
   font-size: 0.8125rem;
   color: var(--color-neutral-400);
+  margin: 0;
+  line-height: 1.4;
 }
