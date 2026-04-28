@@ -1,0 +1,75 @@
+.wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+/* Track — Figma: md=24px tall, lg=28px tall */
+.track {
+  position: relative;
+  display: inline-block;
+  border-radius: var(--radius-full);
+  transition: background-color 150ms ease;
+  flex-shrink: 0;
+}
+
+.md {
+  width: 44px;
+  height: 24px;
+}
+
+.lg {
+  width: 52px;
+  height: 28px;
+}
+
+/* Off state — #e9e9e9 */
+.off { background: #e9e9e9; }
+.wrapper:hover .off:not(.disabled) { background: #d2d2d2; }
+
+/* On state — primary #292f89 */
+.on { background: var(--color-primary-500); }
+.wrapper:hover .on:not(.disabled) { background: var(--color-primary-700); }
+
+.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Thumb — white circle */
+.thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  transition: transform 150ms ease;
+}
+
+.md .thumb { width: 20px; height: 20px; }
+.lg .thumb { width: 24px; height: 24px; }
+
+.on.md .thumb   { transform: translateX(20px); }
+.on.lg .thumb   { transform: translateX(24px); }
+
+/* Focus ring */
+.input:focus-visible + .track {
+  box-shadow: 0 0 0 3px var(--color-primary-200);
+}
+
+.label {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  color: var(--color-neutral-700);
+}

@@ -1,0 +1,61 @@
+.wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.wrapper.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+/* Box — Figma: sm=20px, md=24px */
+.box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1.5px solid var(--color-neutral-300);
+  border-radius: 4px;
+  background: #ffffff;
+  transition: background 120ms ease, border-color 120ms ease, box-shadow 120ms ease;
+}
+
+.sm { width: 20px; height: 20px; }
+.md { width: 24px; height: 24px; }
+
+.wrapper:hover .box:not(.checked) {
+  border-color: var(--color-primary-400);
+}
+
+.checked {
+  background: var(--color-primary-500);
+  border-color: var(--color-primary-500);
+}
+
+.wrapper:hover .checked {
+  background: var(--color-primary-600);
+  border-color: var(--color-primary-600);
+}
+
+.input:focus-visible + .box {
+  box-shadow: 0 0 0 3px var(--color-primary-200);
+}
+
+.check { width: 12px; height: 12px; }
+
+.label {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  color: var(--color-neutral-800);
+}

@@ -1,0 +1,220 @@
+.section {
+  margin-bottom: 56px;
+}
+
+.sectionHead {
+  margin-bottom: 20px;
+}
+
+.sectionTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-neutral-900);
+  margin-bottom: 6px;
+}
+
+.sectionDesc {
+  font-size: 0.875rem;
+  color: var(--color-neutral-500);
+  line-height: 1.6;
+  max-width: 560px;
+}
+
+/* Preview box */
+.preview {
+  background: #fff;
+  border: 1px solid var(--color-neutral-100);
+  border-radius: var(--radius-lg);
+  padding: 40px 32px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  min-height: 120px;
+}
+
+.preview.dark {
+  background: var(--color-primary-900);
+  border-color: var(--color-primary-800);
+}
+
+.preview.noPad {
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Props table */
+.tableWrap {
+  overflow-x: auto;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-neutral-100);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.table thead tr {
+  background: var(--color-neutral-50);
+}
+
+.table th {
+  text-align: left;
+  padding: 10px 16px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-neutral-500);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--color-neutral-100);
+}
+
+.table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--color-neutral-100);
+  color: var(--color-neutral-700);
+  vertical-align: top;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table tbody tr:hover td {
+  background: var(--color-neutral-50);
+}
+
+/* ─── Anatomy ─── */
+.anatomyList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+}
+
+.anatomyItem {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid var(--color-neutral-100);
+  border-radius: 10px;
+  background: var(--color-neutral-50);
+}
+
+.anatomyNum {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #292F89;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.anatomyName {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-neutral-900);
+  min-width: 160px;
+  flex-shrink: 0;
+}
+
+.anatomyDesc {
+  font-size: 0.875rem;
+  color: var(--color-neutral-500);
+  line-height: 1.5;
+}
+
+/* ─── Do / Don't ─── */
+.ddGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 640px) {
+  .ddGrid { grid-template-columns: 1fr; }
+}
+
+.ddCol {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ddHeading {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.ddHeading[data-type="do"]   { color: #16A34A; }
+.ddHeading[data-type="dont"] { color: #DC2626; }
+
+.ddCard {
+  display: flex;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border-left: 3px solid transparent;
+  background: #fff;
+  border: 1px solid var(--color-neutral-100);
+}
+
+.ddCard[data-type="do"] {
+  border-left: 3px solid #16A34A;
+}
+
+.ddCard[data-type="dont"] {
+  border-left: 3px solid #DC2626;
+}
+
+.ddIcon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-top: 1px;
+}
+
+.ddCard[data-type="do"]   .ddIcon { background: #DCFCE7; color: #16A34A; }
+.ddCard[data-type="dont"] .ddIcon { background: #FEE2E2; color: #DC2626; }
+
+.ddTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-neutral-900);
+  margin-bottom: 2px;
+}
+
+.ddText {
+  font-size: 0.8125rem;
+  color: var(--color-neutral-500);
+  line-height: 1.5;
+}
+
+/* ─── Code ─── */
+.code {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.8125rem;
+  background: var(--color-primary-50);
+  color: var(--color-primary-600);
+  border-radius: 4px;
+  padding: 1px 6px;
+}

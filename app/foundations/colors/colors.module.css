@@ -1,0 +1,58 @@
+.swatchRow {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.swatch {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 76px;
+}
+
+.swatchColor {
+  height: 64px;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+.swatchLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-neutral-700);
+  font-family: 'Inter', sans-serif;
+}
+
+.swatchVar {
+  font-size: 0.625rem;
+  color: var(--color-neutral-400);
+  font-family: monospace;
+  word-break: break-all;
+}
+
+.transparentGrid {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tSwatch {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+}
+
+.tSwatchColor {
+  width: 52px;
+  height: 52px;
+  border-radius: 8px;
+  border: 1px solid rgba(128,128,128,0.15);
+}
+
+.tLabel {
+  font-size: 0.6875rem;
+  color: rgba(255,255,255,0.7);
+  font-family: monospace;
+}

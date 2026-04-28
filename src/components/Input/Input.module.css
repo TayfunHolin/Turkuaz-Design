@@ -1,0 +1,118 @@
+.wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.label {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-neutral-700);
+  line-height: 1.4;
+}
+
+.inputWrap {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1.5px solid #D2D2D2;
+  border-radius: 12px;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+  overflow: hidden;
+}
+
+.inputWrap:hover:not(.disabled) {
+  border-color: #AAAAAA;
+}
+
+.inputWrap:focus-within:not(.hasError) {
+  border-color: #292F89;
+  box-shadow: 0 0 0 3px rgba(41, 47, 137, 0.12);
+}
+
+.hasError {
+  border-color: var(--color-error-500);
+}
+
+.hasError:focus-within {
+  border-color: var(--color-error-500);
+  box-shadow: 0 0 0 3px rgba(237, 28, 36, 0.12);
+}
+
+.disabled {
+  background-color: var(--color-neutral-50);
+  border-color: #E9E9E9;
+  cursor: not-allowed;
+}
+
+/* Sizes */
+.sm { min-height: 40px; }
+.md { min-height: 48px; }
+.lg { min-height: 56px; }
+
+.sm .input { font-size: 0.8125rem; padding: 0 14px; }
+.md .input { font-size: 0.875rem;  padding: 0 16px; }
+.lg .input { font-size: 1rem;      padding: 0 18px; }
+
+.input {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--font-sans);
+  color: var(--color-neutral-900);
+}
+
+.input::placeholder {
+  color: #AAAAAA;
+}
+
+.input:disabled {
+  cursor: not-allowed;
+  color: #AAAAAA;
+}
+
+.element {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 12px;
+  color: var(--color-neutral-400);
+  flex-shrink: 0;
+}
+
+.eyeButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px;
+  height: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-neutral-400);
+  flex-shrink: 0;
+  transition: color 120ms ease;
+}
+
+.eyeButton:hover {
+  color: var(--color-neutral-700);
+}
+
+.error {
+  font-size: 0.8125rem;
+  color: var(--color-error-500);
+  line-height: 1.4;
+}
+
+.hint {
+  font-size: 0.8125rem;
+  color: var(--color-neutral-400);
+  line-height: 1.4;
+}

@@ -1,0 +1,61 @@
+.wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.wrapper.disabled { opacity: 0.4; cursor: not-allowed; }
+
+.input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+/* Figma: sm=20px, md=24px */
+.circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-neutral-300);
+  background: #ffffff;
+  flex-shrink: 0;
+  transition: border-color 120ms, background 120ms, box-shadow 120ms;
+}
+
+.sm { width: 20px; height: 20px; }
+.md { width: 24px; height: 24px; }
+
+.wrapper:hover .circle:not(.checked) { border-color: var(--color-primary-400); }
+
+.checked {
+  border-color: var(--color-primary-500);
+  background: var(--color-primary-500);
+}
+
+.wrapper:hover .checked {
+  border-color: var(--color-primary-600);
+  background: var(--color-primary-600);
+}
+
+.input:focus-visible + .circle {
+  box-shadow: 0 0 0 3px var(--color-primary-200);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+.label {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  color: var(--color-neutral-800);
+}

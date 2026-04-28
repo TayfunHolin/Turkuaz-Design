@@ -1,0 +1,64 @@
+.list {
+  background: #fff;
+  border: 1px solid var(--color-neutral-100);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 24px;
+  border-bottom: 1px solid var(--color-neutral-100);
+}
+
+.row:last-child { border-bottom: none; }
+
+.token {
+  font-family: monospace;
+  font-size: 0.8125rem;
+  color: var(--color-primary-600);
+  background: var(--color-primary-50);
+  padding: 2px 8px;
+  border-radius: 4px;
+  min-width: 160px;
+}
+
+.bar {
+  height: 20px;
+  background: var(--color-primary-400);
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.value {
+  font-size: 0.8125rem;
+  color: var(--color-neutral-500);
+  font-family: monospace;
+}
+
+.radiiGrid {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.radiusCard {
+  background: #fff;
+  border: 1px solid var(--color-neutral-100);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 120px;
+}
+
+.radiusBox {
+  width: 64px;
+  height: 64px;
+  background: var(--color-primary-100);
+  border: 2px solid var(--color-primary-300);
+}

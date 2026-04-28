@@ -1,0 +1,138 @@
+/* Figma specs:
+   Header  : h=48px, bg=#F5F5F5, border=1px solid #E9E9E9, cell padH=16px padV=14px
+   Row     : h=48px, odd=#FFFFFF, even=#F5F5F5 (zebra)
+   Hover   : bg=#EAF6FF
+   Selected: bg=#EAF6FF, border-left=2px solid #292F89
+*/
+
+.wrap {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #E9E9E9;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+}
+
+/* ── Header ── */
+.headerRow {
+  background: #F5F5F5;
+}
+
+.th {
+  height: 48px;
+  padding: 0 16px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-neutral-700);
+  text-align: left;
+  border-bottom: 1px solid #E9E9E9;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.th + .th {
+  border-left: 1px solid #E9E9E9;
+}
+
+.thInner {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.sortable {
+  cursor: pointer;
+}
+
+.sortable:hover {
+  background: #EBEBEB;
+}
+
+.sortIcon {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-neutral-500);
+}
+
+.sortIdle {
+  opacity: 0.35;
+}
+
+/* ── Rows ── */
+.row {
+  background: #FFFFFF;
+  border-bottom: 1px solid #E9E9E9;
+  transition: background 100ms ease;
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.rowAlt {
+  background: #F5F5F5;
+}
+
+.rowHover {
+  background: #EAF6FF;
+}
+
+.rowSelected {
+  background: #EAF6FF;
+  box-shadow: inset 2px 0 0 #292F89;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+/* ── Cells ── */
+.td {
+  height: 48px;
+  padding: 0 16px;
+  color: var(--color-neutral-900);
+  vertical-align: middle;
+  border-left: 1px solid transparent;
+}
+
+.td + .td {
+  border-left: 1px solid #E9E9E9;
+}
+
+/* ── Empty ── */
+.empty {
+  padding: 48px 16px;
+  text-align: center;
+  color: var(--color-neutral-400);
+  font-size: 0.875rem;
+}
+
+/* ── Checkbox ── */
+.checkbox {
+  width: 16px;
+  height: 16px;
+  accent-color: #292F89;
+  cursor: pointer;
+}
+
+/* ── Loading skeleton ── */
+.skeleton {
+  display: inline-block;
+  height: 14px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #E9E9E9 25%, #F5F5F5 50%, #E9E9E9 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}

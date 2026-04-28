@@ -1,0 +1,85 @@
+/* Figma: h=68px, radius=16px, semantic backgrounds */
+.toast {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  min-height: 68px;
+  border-radius: 16px;
+  padding: 14px 16px;
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid transparent;
+}
+
+.icon { flex-shrink: 0; margin-top: 1px; }
+
+.body { flex: 1; min-width: 0; }
+
+.title {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 2px;
+}
+
+.desc {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  opacity: 0.85;
+}
+
+.action {
+  margin-top: 6px;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.close {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  opacity: 0.6;
+  padding: 2px;
+  border-radius: 4px;
+  display: flex;
+}
+.close:hover { opacity: 1; }
+
+/* Semantic variants — Figma colors */
+.success {
+  background: #e5ffea;
+  border-color: #c8f9d0;
+  color: #004845;
+}
+.success .action { color: #028255; }
+
+.error {
+  background: #ffede5;
+  border-color: #fdb8a3;
+  color: #71052f;
+}
+.error .action { color: #cb142b; }
+
+.info {
+  background: #eaf6ff;
+  border-color: #c5e8ff;
+  color: #032d60;
+}
+.info .action { color: #1171c9; }
+
+.warning {
+  background: #fff8e8;
+  border-color: #fbd698;
+  color: #691b00;
+}
+.warning .action { color: #dc6803; }
