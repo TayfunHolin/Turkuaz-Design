@@ -5,9 +5,9 @@ export default function Home() {
   return (
     <div className={styles.home}>
       <div className={styles.badge}>Design System v0.1</div>
-      <h1 className={styles.title}>Finans Sabah<br />Design System</h1>
+      <h1 className={styles.title}>Sabah Finans<br />Design System</h1>
       <p className={styles.desc}>
-        Finans Sabah ürünleri için tasarım dili, component kütüphanesi ve kullanım rehberi.
+        Sabah Finans ürünleri için tasarım dili, component kütüphanesi ve kullanım rehberi.
       </p>
 
       <div className={styles.grid}>

@@ -57,7 +57,7 @@ export default function TypographyPage() {
               <div key={w.value} className={styles.weightRow}>
                 <span className={styles.weightLabel}>{w.name} ({w.value})</span>
                 <span style={{ fontWeight: w.value, fontSize: "1.25rem" }}>
-                  Finans Sabah Design System
+                  Sabah Finans Design System
                 </span>
               </div>
             ))}

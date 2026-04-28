@@ -32,7 +32,7 @@ export default function AvatarPage() {
       <Section title="Fallback" description="Hatalı bir src otomatik olarak initials moduna döner.">
         <PreviewBox>
           <Avatar src="https://broken.url/photo.jpg" name="Tayfun Holin" size="md" />
-          <Avatar src="https://broken.url/photo.jpg" name="Finans Sabah" size="md" />
+          <Avatar src="https://broken.url/photo.jpg" name="Sabah Finans" size="md" />
         </PreviewBox>
       </Section>
 
