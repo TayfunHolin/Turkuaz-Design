@@ -38,10 +38,10 @@ export function Sidebar() {
 
   return (
     <aside className={styles.sidebar}>
-      <div className={styles.logo}>
+      <Link href="/" className={styles.logo}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/logo.svg" alt="Finans" className={styles.logoImg} />
-      </div>
+      </Link>
 
       <nav className={styles.nav}>
         {nav.map((section) => (
