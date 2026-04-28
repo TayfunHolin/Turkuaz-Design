@@ -13,9 +13,9 @@ export default function Home() {
       <div className={styles.grid}>
         <Link href="/foundations/colors" className={styles.card}>
           <div className={styles.cardIcon} style={{ background: "var(--color-primary-50)" }}>
-            <span style={{ display: "flex", gap: 4 }}>
-              {["#0C1033","#292F89","#5560C4","#DDE0F5"].map(c => (
-                <span key={c} style={{ width: 16, height: 16, borderRadius: "50%", background: c }} />
+            <span style={{ display: "flex", gap: 3 }}>
+              {["#0C1033","#292F89","#5560C4"].map(c => (
+                <span key={c} style={{ width: 12, height: 12, borderRadius: "50%", background: c }} />
               ))}
             </span>
           </div>
@@ -33,7 +33,7 @@ export default function Home() {
 
         <Link href="/components/button" className={styles.card}>
           <div className={styles.cardIcon} style={{ background: "var(--color-primary-50)" }}>
-            <span style={{ background: "var(--color-primary-500)", color: "#fff", borderRadius: 999, padding: "6px 14px", fontSize: 13, fontWeight: 600 }}>Button</span>
+            <span style={{ background: "var(--color-primary-500)", color: "#fff", borderRadius: 999, padding: "5px 10px", fontSize: 12, fontWeight: 600 }}>Btn</span>
           </div>
           <h3 className={styles.cardTitle}>Button</h3>
           <p className={styles.cardDesc}>7 variant, 5 boyut, tam state coverage.</p>
@@ -49,7 +49,7 @@ export default function Home() {
 
         <Link href="/components/badge" className={styles.card}>
           <div className={styles.cardIcon} style={{ background: "var(--color-primary-50)" }}>
-            <span style={{ background: "var(--color-success-50)", color: "var(--color-success-700)", borderRadius: 999, padding: "4px 10px", fontSize: 12, fontWeight: 600 }}>Active</span>
+            <span style={{ background: "var(--color-success-50)", color: "var(--color-success-700)", borderRadius: 999, padding: "3px 8px", fontSize: 11, fontWeight: 600 }}>Active</span>
           </div>
           <h3 className={styles.cardTitle}>Badge</h3>
           <p className={styles.cardDesc}>6 semantic variant, dot desteği.</p>
@@ -57,7 +57,7 @@ export default function Home() {
 
         <Link href="/components/input" className={styles.card}>
           <div className={styles.cardIcon} style={{ background: "var(--color-primary-50)" }}>
-            <span style={{ border: "1.5px solid var(--color-neutral-300)", borderRadius: 6, padding: "6px 10px", fontSize: 13, color: "var(--color-neutral-400)" }}>Placeholder...</span>
+            <span style={{ border: "1.5px solid var(--color-neutral-300)", borderRadius: 6, padding: "4px 7px", fontSize: 11, color: "var(--color-neutral-400)" }}>Text...</span>
           </div>
           <h3 className={styles.cardTitle}>Input</h3>
           <p className={styles.cardDesc}>Label, hint, error ve icon slot desteği.</p>
