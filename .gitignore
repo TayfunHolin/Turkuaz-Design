@@ -6,3 +6,4 @@ storybook-static
 *storybook.log
 .next
 tsconfig.tsbuildinfo
+.vercel
