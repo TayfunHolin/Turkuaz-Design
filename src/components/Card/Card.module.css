@@ -1,0 +1,134 @@
+/* Card — Figma spec: radius=16px, bg=#fff, border=1px #E9E9E9 */
+
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ── Variants ── */
+.default {
+  border: 1px solid #E9E9E9;
+}
+
+.outlined {
+  border: 1.5px solid #292F89;
+}
+
+.elevated {
+  border: 1px solid transparent;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.06);
+}
+
+/* ── Interactive ── */
+.interactive {
+  cursor: pointer;
+  transition: box-shadow 150ms ease, transform 150ms ease, border-color 150ms ease;
+}
+
+.default.interactive:hover,
+.elevated.interactive:hover {
+  box-shadow: 0 4px 16px rgba(41,47,137,0.10), 0 12px 32px rgba(41,47,137,0.08);
+  transform: translateY(-2px);
+  border-color: #D2D7F5;
+}
+
+.outlined.interactive:hover {
+  box-shadow: 0 4px 16px rgba(41,47,137,0.12);
+  transform: translateY(-2px);
+}
+
+.interactive:focus-visible {
+  outline: 2px solid #292F89;
+  outline-offset: 2px;
+}
+
+/* ── Padding ── */
+.pad_sm { padding: 16px; }
+.pad_md { padding: 20px; }
+.pad_lg { padding: 28px; }
+
+/* Image padding compensation when card has padding */
+.pad_sm .imageWrap,
+.pad_md .imageWrap,
+.pad_lg .imageWrap {
+  margin: -20px -20px 16px;
+}
+.pad_sm .imageWrap { margin: -16px -16px 14px; }
+.pad_lg .imageWrap { margin: -28px -28px 20px; }
+
+/* ── Image ── */
+.imageWrap {
+  width: 100%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Body (for none padding) ── */
+.body {
+  padding: 20px;
+}
+
+/* ── Badge row ── */
+.badgeRow {
+  margin-bottom: 10px;
+}
+
+/* ── Header ── */
+.header {
+  margin-bottom: 8px;
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-neutral-900);
+  line-height: 1.35;
+}
+
+.subtitle {
+  font-size: 0.8125rem;
+  color: var(--color-neutral-500);
+  margin-top: 2px;
+  line-height: 1.4;
+}
+
+/* ── Description ── */
+.description {
+  font-size: 0.875rem;
+  color: var(--color-neutral-600);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Actions ── */
+.actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 16px;
+}
+
+/* ── Footer ── */
+.footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #E9E9E9;
+  font-size: 0.8125rem;
+  color: var(--color-neutral-400);
+}

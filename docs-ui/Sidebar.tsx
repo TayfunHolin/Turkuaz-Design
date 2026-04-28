@@ -19,6 +19,7 @@ const nav = [
       { label: "Avatar",    href: "/components/avatar" },
       { label: "Badge",     href: "/components/badge" },
       { label: "Button",    href: "/components/button" },
+      { label: "Card",      href: "/components/card" },
       { label: "Checkbox",  href: "/components/checkbox" },
       { label: "Chip",       href: "/components/chip" },
       { label: "Data Table", href: "/components/data-table" },
