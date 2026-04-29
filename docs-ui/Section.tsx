@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Section.module.css";
+import { Toast } from "@/src/components/Toast/Toast";
 
 interface SectionProps {
   title: string;
@@ -77,25 +78,13 @@ export function DosDonts({ items }: { items: UsageCard[] }) {
       <div className={styles.ddCol}>
         <p className={styles.ddHeading} data-type="do">Yapılacaklar</p>
         {dos.map((item, i) => (
-          <div key={i} className={styles.ddCard} data-type="do">
-            <span className={styles.ddIcon}>✓</span>
-            <div>
-              <p className={styles.ddTitle}>{item.title}</p>
-              <p className={styles.ddText}>{item.description}</p>
-            </div>
-          </div>
+          <Toast key={i} type="success" title={item.title} description={item.description} />
         ))}
       </div>
       <div className={styles.ddCol}>
         <p className={styles.ddHeading} data-type="dont">Yapılmayacaklar</p>
         {donts.map((item, i) => (
-          <div key={i} className={styles.ddCard} data-type="dont">
-            <span className={styles.ddIcon}>✕</span>
-            <div>
-              <p className={styles.ddTitle}>{item.title}</p>
-              <p className={styles.ddText}>{item.description}</p>
-            </div>
-          </div>
+          <Toast key={i} type="error" title={item.title} description={item.description} />
         ))}
       </div>
     </div>

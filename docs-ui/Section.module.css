@@ -162,52 +162,6 @@
 .ddHeading[data-type="do"]   { color: #16A34A; }
 .ddHeading[data-type="dont"] { color: #DC2626; }
 
-.ddCard {
-  display: flex;
-  gap: 12px;
-  padding: 14px 16px;
-  border-radius: 10px;
-  border-left: 3px solid transparent;
-  background: #fff;
-  border: 1px solid var(--color-neutral-100);
-}
-
-.ddCard[data-type="do"] {
-  border-left: 3px solid #16A34A;
-}
-
-.ddCard[data-type="dont"] {
-  border-left: 3px solid #DC2626;
-}
-
-.ddIcon {
-  flex-shrink: 0;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.75rem;
-  font-weight: 700;
-  margin-top: 1px;
-}
-
-.ddCard[data-type="do"]   .ddIcon { background: #DCFCE7; color: #16A34A; }
-.ddCard[data-type="dont"] .ddIcon { background: #FEE2E2; color: #DC2626; }
-
-.ddTitle {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--color-neutral-900);
-  margin-bottom: 2px;
-}
-
-.ddText {
-  font-size: 0.8125rem;
-  color: var(--color-neutral-500);
-  line-height: 1.5;
-}
 
 /* ─── Code ─── */
 .code {
