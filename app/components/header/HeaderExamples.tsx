@@ -8,9 +8,9 @@ import { Button } from "@/src/components/Button/Button";
 const Logo = ({ dark = true }: { dark?: boolean }) => (
   /* eslint-disable-next-line @next/next/no-img-element */
   <img
-    src="/logo.svg"
+    src={dark ? "/logo.svg" : "/logo-light.svg"}
     alt="Finans"
-    style={{ width: 124, height: "auto", display: "block", filter: dark ? undefined : "brightness(0) saturate(100%) invert(13%) sepia(67%) saturate(1200%) hue-rotate(214deg) brightness(80%) contrast(120%)" }}
+    style={{ width: 124, height: "auto", display: "block" }}
   />
 );
 
