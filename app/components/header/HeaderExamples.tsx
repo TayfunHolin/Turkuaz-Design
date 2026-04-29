@@ -37,10 +37,7 @@ export function HeaderExamples() {
             navItems={items}
             onNavClick={(item) => setActiveKey(item.key)}
             actions={
-              <>
-                <Button variant="ghost" size="sm" style={{ color: "rgba(255,255,255,0.75)" }}>Giriş Yap</Button>
-                <Button variant="primary" size="sm">Üye Ol</Button>
-              </>
+              <Avatar name="Ayşe Yılmaz" size="sm" />
             }
           />
         </div>
@@ -51,23 +48,6 @@ export function HeaderExamples() {
           <Header
             variant="light"
             logo={<Logo dark={false} />}
-            navItems={items}
-            onNavClick={(item) => setActiveKey(item.key)}
-            actions={
-              <>
-                <Button variant="secondary" size="sm">Giriş Yap</Button>
-                <Button variant="primary" size="sm">Üye Ol</Button>
-              </>
-            }
-          />
-        </div>
-      </Section>
-
-      <Section title="With Avatar (Logged In)">
-        <div style={{ borderRadius: 12, overflow: "hidden", border: "1px solid #E9E9E9" }}>
-          <Header
-            variant="dark"
-            logo={<Logo dark />}
             navItems={items}
             onNavClick={(item) => setActiveKey(item.key)}
             actions={
